@@ -1,0 +1,12 @@
+@use '../abstracts' as *;
+
+.main {
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: $content-width;
+  margin-inline: auto;
+  padding-inline: px-to-rem(24);
+}

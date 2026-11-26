@@ -1,0 +1,19 @@
+// Theme "DA Projects" – Werte aus Figma (DA_Projects_theme_16, Pop up_03, Components).
+[data-theme='da-projects'] {
+  --font-headline: 'Figtree', sans-serif;
+  --font-text: 'Figtree', sans-serif;
+
+  --color-bg: #ffffff;
+  --color-text: #1e7594;
+  --color-primary: #1e7594;
+  --color-primary-dark: #1e7594; // kein Kartenverlauf
+  --color-primary-light: #bfe5f2;
+  --color-card-face: #ddeaef;
+  --color-header: #f0f3f4;
+  --color-popup-bg: #f0f6f9;
+  --color-popup-text: #294f60;
+  --color-accent: #fd8a81; // Hover: #ed5b50
+  --color-accent-text: #ffffff;
+  --color-player-blue: #097fc5;
+  --color-player-orange: #ea6900;
+}

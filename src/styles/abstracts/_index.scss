@@ -1,0 +1,5 @@
+// Sammelt alle Abstracts, damit Partials nur eine Zeile brauchen:
+// @use '../abstracts' as *;
+@forward 'variables';
+@forward 'functions';
+@forward 'mixins';

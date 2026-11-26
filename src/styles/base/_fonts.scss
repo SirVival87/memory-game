@@ -1,0 +1,66 @@
+// Lokal eingebundene Google Fonts (latin). Dateien liegen in public/fonts.
+// Keine Verbindung zu Google-Servern zur Laufzeit.
+
+@font-face {
+  font-family: 'Red Rose';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/red-rose-variable.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Almarai';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/almarai-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Almarai';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/almarai-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/orbitron-variable.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('/fonts/figtree-variable.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Kite One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/kite-one-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Delius Unicase';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/delius-unicase-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Delius Unicase';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/delius-unicase-700.woff2') format('woff2');
+}

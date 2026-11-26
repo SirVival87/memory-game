@@ -1,0 +1,26 @@
+// Einstiegspunkt: bindet alle Partials in der richtigen Reihenfolge ein.
+
+// Basis
+@use 'base/fonts';
+@use 'base/layout';
+@use 'base/reset';
+@use 'base/typography';
+
+// Themes (CSS-Variablen je data-theme)
+@use 'themes/code-vibes';
+@use 'themes/gaming';
+@use 'themes/da-projects';
+@use 'themes/food';
+
+// Komponenten
+@use 'components/button';
+@use 'components/card';
+@use 'components/radio';
+@use 'components/scoreboard';
+@use 'components/popup';
+
+// Seiten
+@use 'pages/home';
+@use 'pages/settings';
+@use 'pages/game';
+@use 'pages/result';

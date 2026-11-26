@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body>
+    <main id="app" class="main">
+        <section class="home">
+            <div class="container">
+                <div class="game-header">
+                    <h1 class="game-title">Memory Game</h1>
+                    <button class="theme-toggle-button" aria-label="Toggle Theme">
+                        <span class="theme-toggle-icon">🌙</span>
+                    </button>
+                </div>
+                <div class="game-board"></div>
+                <div class="game-footer">
+                    <p class="game-stats">Moves: <span id="move-count">0</span> | Time: <span id="timer">00:00</span></p>
+                    <button class="restart-button">Restart Game</button>
+                </div>
+            </div>
+        </section>
+        
+
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

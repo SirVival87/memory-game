@@ -1,0 +1,20 @@
+// Theme "Code vibes" – Werte aus Figma (Code vibes theme_16, Pop up_01, Components).
+// Aktiv über <body data-theme="code-vibes">, wird erst beim Spielstart gesetzt.
+[data-theme='code-vibes'] {
+  --font-headline: 'Red Rose', sans-serif;
+  --font-text: 'Almarai', sans-serif;
+
+  --color-bg: #303131;
+  --color-text: #ffffff;
+  --color-primary: #4dd5bc; // Popup-Hauptbutton in Figma: #66cfbc
+  --color-primary-dark: #286f62;
+  --color-primary-light: #86e9d6;
+  --color-card-face: #e8f3f0;
+  --color-header: rgb(134 233 214 / 20%);
+  --color-popup-bg: #ffffff;
+  --color-popup-text: #303131;
+  --color-accent: rgb(134 233 214 / 14%);
+  --color-accent-text: #4dd5bc;
+  --color-player-blue: #2bb1ff;
+  --color-player-orange: #f58e39;
+}

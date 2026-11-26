@@ -1,0 +1,19 @@
+// Theme "Foods" – Werte aus Figma (Food_theme_16, Pop up_04, Components).
+[data-theme='food'] {
+  --font-headline: 'Kite One', sans-serif;
+  --font-text: 'Delius Unicase', sans-serif;
+
+  --color-bg: #ffffff;
+  --color-text: #a45212;
+  --color-primary: #f3832d;
+  --color-primary-dark: #f3832d; // kein Kartenverlauf
+  --color-primary-light: #ffab3e;
+  --color-card-face: #f4ece4;
+  --color-header: #f4ece4;
+  --color-popup-bg: #f6f6f6;
+  --color-popup-text: #a45212;
+  --color-accent: #fff9f2;
+  --color-accent-text: #f3832d;
+  --color-player-blue: #097fc5;
+  --color-player-orange: #ea6900;
+}

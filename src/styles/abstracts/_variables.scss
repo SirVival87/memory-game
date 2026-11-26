@@ -1,0 +1,17 @@
+// Globale Werte aus dem Figma-Design (Frames sind 1440 × 1024 px).
+// Theme-abhängige Farben und Schriften stehen als CSS-Variablen in themes/.
+
+// Layout
+$content-width: 1440px;
+$breakpoint-widescreen: 1440px;
+$breakpoint-tablet: 1024px;
+$breakpoint-mobile: 600px;
+
+// Farben, die in allen Themes gleich sind
+$color-primary-dark: #303131;
+$color-secondary-yellow: #f0ea6e;
+$color-white: #ffffff;
+
+// Animation
+$transition-fast: 200ms ease-out;
+$transition-flip: 300ms ease-in-out;
