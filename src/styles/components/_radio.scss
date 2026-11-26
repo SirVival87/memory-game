@@ -1,3 +1,15 @@
 @use '../abstracts' as *;
 
 // Radiobuttons der Settings inkl. Hover- und Auswahl-Animation (gelber Pfeil).
+.radio {
+  padding-left: 44px;
+  font-size: px-to-rem(20);
+  display: flex;
+  gap: px-to-rem(12);
+  margin-bottom: 12px;
+
+  &__input {
+    width: px-to-rem(24);
+    height: px-to-rem(24);
+  }
+}

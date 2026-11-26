@@ -3,6 +3,7 @@
  */
 
 import { getHomeTemplate } from './templates/home-template';
+import { getSettingsTemplate } from './templates/settings-template';
 
 const APP = document.getElementById('app');
 
@@ -31,7 +32,7 @@ function addPlayButtonListener(): void {
  */
 export function renderSettings(): void {
   if (APP) {
-    APP.innerHTML = '<h1>Settings</h1>';
+    APP.innerHTML = getSettingsTemplate();
   }
 }
 

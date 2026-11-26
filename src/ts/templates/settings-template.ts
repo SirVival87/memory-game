@@ -2,4 +2,74 @@
  * HTML template of the settings page.
  */
 
-export {};
+import { IMG_PATH } from '../constants';
+
+/**
+ * Returns the HTML of the settings page (US2, US3).
+ * @returns HTML string for the main container.
+ */
+export function getSettingsTemplate(): string {
+  return `
+    <section class="settings">
+      <div class="settings__container">  
+        <h1 class="settings__headline">Settings</h1>
+        <form class="settings__form" id="settings-form">
+          <div class="settings__options>
+            <fieldset class="settings__group">
+              <legend class="settings__legend">
+                <img class="settings__legend-icon" src="${IMG_PATH}icons/palette.svg" alt=""> Game themes
+              </legend>
+              ${getRadioTemplate('theme', 'code-vibes', 'Code vibe theme')}
+              ${getRadioTemplate('theme', 'gaming', 'Gaming theme')}
+              ${getRadioTemplate('theme', 'da-projects', 'DA Projects theme')}
+              ${getRadioTemplate('theme', 'food', 'Foods theme')}
+            </fieldset>
+            <fieldset class="settings__group">
+              <legend class="settings__legend">
+                <img class="settings__legend-icon" src="${IMG_PATH}icons/pawn.svg" alt=""> Choose starting player
+              </legend>
+              ${getRadioTemplate('player', 'blue', 'Blue')}
+              ${getRadioTemplate('player', 'orange', 'Orange')}
+            </fieldset>
+            <fieldset class="settings__group">
+              <legend class="settings__legend">
+                <img class="settings__legend-icon" src="${IMG_PATH}icons/cards.svg" alt=""> Board size
+              </legend>
+              ${getRadioTemplate('boardSize', '16', '16 cards')}
+              ${getRadioTemplate('boardSize', '24', '24 cards')}
+              ${getRadioTemplate('boardSize', '36', '36 cards')}
+            </fieldset>
+          </div>
+          <div class="settings__summary>
+            <img class="settings__preview" id="settings-preview" src="${IMG_PATH}previews/code-vibes.png" alt="Preview of the selected theme">
+            <div class="settings__bar">
+              <p class="settings__bar-item" id="bar-theme">Game theme</p>
+              <p class="settings__bar-item" id="bar-player">Player</p>
+              <p class="settings__bar-item" id="bar-board-size">Board size</p>
+              <button class="button button--start" type="submit" disabled>
+              <img class="button__icon" src="${IMG_PATH}icons/start.svg" alt="Start Button">
+              Start
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  `;
+}
+
+/**
+ * Returns the HTML of a single radio option.
+ * @param name - Group name, e.g. 'theme'.
+ * @param value - Value stored in the state, e.g. 'code-vibes'.
+ * @param label - Text shown to the user.
+ * @returns HTML string of the option.
+ */
+function getRadioTemplate(name: string, value: string, label: string): string {
+  return `
+    <label class="radio">
+      <input class="radio__input" type="radio" name="${name}" value="${value}">
+      <span class="radio__label">${label}</span>
+    </label>
+  `;
+}

@@ -1,3 +1,90 @@
 @use '../abstracts' as *;
 
 // Settings: Theme, Spieler, Brettgröße, Vorschau und Auswahl-Leiste.
+
+// Gelbe Unterstreichung der Überschrift (Figma: Linie 4 px, so breit wie die Überschrift, Raute am linken Ende).
+$underline-thickness: px-to-rem(4);
+$underline-diamond: px-to-rem(16);
+$underline-gap: px-to-rem(8);
+
+.settings {
+
+  &__headline {
+    position: relative;
+    display: inline-block; // Box nur so breit wie der Text, die Linie richtet sich danach
+    padding-bottom: px-to-rem($underline-gap + $underline-thickness);
+    font-size: px-to-rem(54);
+    font-weight: 700;
+
+    // Linie
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: px-to-rem($underline-thickness);
+      background-color: $color-secondary-yellow;
+    }
+
+    // Raute am linken Ende, mittig auf der Linie
+    &::before {
+      content: '';
+      position: absolute;
+      left: px-to-rem(-$underline-diamond * 0.5);
+      bottom: px-to-rem(($underline-thickness - $underline-diamond) * 0.5);
+      width: px-to-rem($underline-diamond);
+      height: px-to-rem($underline-diamond);
+      background-color: $color-secondary-yellow;
+      transform: rotate(45deg);
+    }
+  }
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__options {
+    gap: px-to-rem(12);
+  }
+
+  &__group {
+    flex-direction: column;
+    border: none;
+    padding: 0;
+    margin: 0;
+    gap: px-to-rem(16);
+  }
+
+  &__legend {
+    display: flex;
+    gap: px-to-rem(8);
+    font-weight: 700;
+    font-size: px-to-rem(24);
+    margin-bottom: 16px;
+  }
+
+  &__legend-icon {
+    width: px-to-rem(32);
+    height: px-to-rem(32);
+  }
+
+  &__bar {
+    display: flex;
+    align-items: center;
+  }
+
+  &__bar-item {
+    position: relative; // Bezugspunkt für den Strich
+  }
+
+  &__bar-item:not(:last-of-type)::after {
+    content: '';
+    position: absolute;
+    right: px-to-rem(-20); // Abstand nach rechts, außerhalb des Textes
+    top: 50%;
+    transform: translateY(-50%) skewX(-20deg); // vertikal zentrieren + neigen
+    // width, height, background-color wie gehabt
+  }
+}
