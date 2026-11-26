@@ -1,7 +1,9 @@
-import './styles/style.scss';
-import { getHomeTemplate } from './ts/templates/home-template';
+/**
+ * Entry point: loads the styles and starts the app.
+ */
 
-const APP = document.getElementById('app');
+import './styles/style.scss';
+import { renderHome } from './ts/navigation';
 
 init();
 
@@ -10,28 +12,6 @@ init();
  */
 function init(): void {
   renderHome();
-}
-
-/**
- * Inserts the home page template into the main container.
- */
-function renderHome(): void {
-  if (APP) {
-    APP.innerHTML = getHomeTemplate();
-  }
-  addPlayButtonListener();
-}
-
-/**
- * Opens the settings page when the play button is clicked.
- */
-function addPlayButtonListener(): void {
-  const playButton = document.getElementById('play-button');
-  if (playButton) {
-    playButton.addEventListener('click', () => {
-      console.log('Play button clicked'); //hier muss die funktion rein, aktuell nur log
-    });
-  }
 }
 
 // const fieldRef = document.getElementById('field');

@@ -1,3 +1,7 @@
+/**
+ * HTML template of the home page.
+ */
+
 import { IMG_PATH } from '../constants';
 
 /**

@@ -91,7 +91,9 @@ src/
   - Drei `<fieldset>` mit `<legend>` und Radiobuttons.
   - Bei `change`: State setzen, Vorschau-Bild tauschen, Leiste aktualisieren, Auswahl animieren.
   - Start erst aktiv, wenn alles gewählt ist.
+  - Bewusste Abweichung vom Design: Überschrift „Choose starting player“ statt „Choose player“, weil die Auswahl festlegt, wer beginnt. Im README erwähnen.
 - [ ] **Phase 5 – US4 Spielfeld:**
+  - Beim Start: `state.currentPlayer = state.player` (der gewählte Spieler beginnt).
   - Karten erzeugen: `boardSize / 2` Motive nehmen, verdoppeln, mit Fisher-Yates mischen.
   - Grid: 4×4, 6×4 oder 6×6.
   - Klick → Karte umdrehen → Paar prüfen. Bei Treffer Punkt und der Spieler ist nochmal dran, sonst nach `FLIP_DELAY` zurückdrehen und Spieler wechseln.
