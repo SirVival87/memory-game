@@ -1,3 +1,47 @@
+@use 'sass:math';
 @use '../abstracts' as *;
 
-// Buttons: Play, Start, Exit game, Back to start, Popup-Buttons.
+$controller-tilt-angle: -25.77deg;
+$arrow-hover-scale: math.div(36, 33);
+$arrow-stroke: 2px;
+$arrow-stroke-hover: 4px;
+
+.button {
+  background-color: $color-secondary-yellow;
+  padding: px-to-rem(24);
+  gap: px-to-rem(20);
+  @include flex-center;
+  color: $color-primary-dark;
+  font-weight: 700;
+  font-size: px-to-rem(40);
+  transition: transform $transition-fast;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &__icon {
+    transition: transform $transition-fast;
+  }
+
+  &:hover &__icon {
+    transform: rotate($controller-tilt-angle);
+  }
+
+  &__arrow {
+    width: px-to-rem(40);
+    height: px-to-rem(30);
+    fill: none;
+    stroke: currentColor;
+    stroke-width: $arrow-stroke;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transform-origin: left center;
+    transition: transform $transition-fast, stroke-width $transition-fast;
+  }
+
+  &:hover &__arrow {
+    transform: scaleX($arrow-hover-scale);
+    stroke-width: $arrow-stroke-hover;
+  }
+}

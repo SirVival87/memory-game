@@ -1,5 +1,5 @@
 /**
- * HTML-Template für den Exit-Dialog.
+ * HTML template for the exit dialog.
  */
 
 export {};

@@ -1,3 +1,34 @@
 @use '../abstracts' as *;
 
 // Startseite: Ready to play?, Play-Button, animierter Controller.
+
+.home {
+  position: relative;
+  min-height: 100vh;
+  background-color: $color-primary-dark;
+  color: $color-white;
+  @include flex-center;
+
+
+  &__content {
+    @include flex-center;
+    flex-direction: column;
+    gap: clamp(px-to-rem(40), 12vh, px-to-rem(150));
+  }
+
+  &__subline {
+    font-weight: 400;
+    font-size: px-to-rem(48);
+  }
+
+  &__headline {
+    font-weight: 700;
+    font-size: px-to-rem(140);
+  }
+
+  &__controller {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}

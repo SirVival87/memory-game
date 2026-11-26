@@ -1,5 +1,5 @@
 /**
- * HTML-Templates für Kopfzeile, Spielfeld und Karte.
+ * HTML templates for the header, the board and a card.
  */
 
 export {};

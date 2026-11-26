@@ -1,5 +1,5 @@
 /**
- * Typen für das Spiel: Theme, Player, BoardSize, Card, GameState.
+ * Types for the game: Theme, Player, BoardSize, Card, GameState.
  */
 
 export {};

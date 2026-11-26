@@ -1,5 +1,5 @@
 /**
- * Render-Funktionen je Screen: renderHome, renderSettings, renderGame, renderResult.
+ * Render functions per screen: renderHome, renderSettings, renderGame, renderResult.
  */
 
 export {};

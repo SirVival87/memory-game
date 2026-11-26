@@ -20,7 +20,7 @@ Grundlage: Figma-Design „Memory“, Checkliste (User Stories 1–5), Coding-Ko
 
 | Screen | Inhalt |
 |---|---|
-| Home | „It's play time.“ / „Ready to play?“, Play-Button, großer Controller unten links (gedreht −37°, 5 % Deckkraft) → animieren |
+| Home | „It's play time.“ / „Ready to play?“, Play-Button (Controller-Icon kippt beim Hover), großer Controller unten links als Deko (gedreht −37°, 5 % Deckkraft) |
 | Settings | Game themes (4), Choose player (Blue/Orange), Board size (16/24/36), Vorschau-Bild je Theme, Leiste „Game theme / Player / Board size“ + Start |
 | Spielfeld | Punktestand Blue/Orange, „Current player“, „Exit game“ → Popup „Are you sure you want to quit the game?“ (Back to game / Exit game) |
 | Game over | „Game over“ + Final score, wechselt nach **1200ms** automatisch zu Winner oder Draw |
@@ -85,7 +85,7 @@ src/
 
 - [x] **Phase 0 – Vorbereitung:** Assets exportiert, Fonts lokal, Farben und Schriften notiert, Favicon, Ordnerstruktur.
 - [x] **Phase 1 – SCSS-Grundgerüst:** Variablen, Reset, Layout-Container, Mixins (widescreen, tablet, mobile), Themes mit vollständiger Farbliste.
-- [ ] **Phase 2 – US1 Home:** semantisches HTML, Play-Button → Settings, Controller mit `@keyframes` animieren.
+- [ ] **Phase 2 – US1 Home:** semantisches HTML, Play-Button → Settings, Controller-Icon im Button kippt beim Hover, Pfeil wächst.
 - [ ] **Phase 3 – Typen, State, Navigation:** `type Theme`, `type BoardSize = 16 | 24 | 36`, `interface GameState`, `render…()`-Funktionen.
 - [ ] **Phase 4 – US2 + US3 Settings:**
   - Drei `<fieldset>` mit `<legend>` und Radiobuttons.

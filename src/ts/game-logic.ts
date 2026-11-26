@@ -1,5 +1,5 @@
 /**
- * Spiellogik: Karten erzeugen und mischen, Klick, Paar prüfen, Spielerwechsel, Spielende.
+ * Game logic: create and shuffle cards, handle clicks, check pairs, switch players, end the game.
  */
 
 export {};

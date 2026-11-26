@@ -1,5 +1,5 @@
 /**
- * Zentraler Spielzustand (Settings, Punkte, aktueller Spieler, aufgedeckte Karten) und Reset.
+ * Central game state (settings, scores, current player, flipped cards) and reset.
  */
 
 export {};
