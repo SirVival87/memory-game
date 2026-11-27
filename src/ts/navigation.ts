@@ -4,6 +4,8 @@
 
 import { getHomeTemplate } from './templates/home-template';
 import { getSettingsTemplate } from './templates/settings-template';
+import { initSettings } from './settings';
+import { prepareGame } from './game-logic';
 
 const APP = document.getElementById('app');
 
@@ -28,12 +30,21 @@ function addPlayButtonListener(): void {
 }
 
 /**
- * Inserts the settings page into the main container (placeholder until phase 4).
+ * Inserts the settings page into the main container. Start opens the game board.
  */
 export function renderSettings(): void {
   if (APP) {
     APP.innerHTML = getSettingsTemplate();
   }
+  initSettings(startGame);
+}
+
+/**
+ * Starts a new round with the chosen settings and shows the game board.
+ */
+function startGame(): void {
+  prepareGame();
+  renderGame();
 }
 
 /**

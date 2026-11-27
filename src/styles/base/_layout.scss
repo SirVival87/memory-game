@@ -8,5 +8,5 @@
   width: 100%;
   max-width: $content-width;
   margin-inline: auto;
-  padding-inline: px-to-rem(24);
+  padding-inline: clamp(px-to-rem(16), 12vw, px-to-rem(170));
 }

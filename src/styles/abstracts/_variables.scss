@@ -11,6 +11,9 @@ $breakpoint-mobile: 600px;
 $color-primary-dark: #303131;
 $color-secondary-yellow: #f0ea6e;
 $color-white: #ffffff;
+$color-light-gray: #f6f6f6;      // Hintergrund der Leiste in den Settings
+$color-disabled-bg: #dbdbd6;     // deaktivierter Button
+$color-disabled-text: #a3a1a1;   // Schrift im deaktivierten Button
 
 // Animation
 $transition-fast: 200ms ease-out;

@@ -1,15 +1,109 @@
 @use '../abstracts' as *;
 
 // Radiobuttons der Settings inkl. Hover- und Auswahl-Animation (gelber Pfeil).
+
+// Gelber Pfeil hinter der gewählten Option (Figma: Radial buttons, Variante "choosen")
+$radio-arrow-gap: 10;       // Abstand Text → Linie
+$radio-arrow-length: 41;    // Länge der Linie
+$radio-arrow-thickness: 3;  // Stärke der Linie
+$radio-arrow-diamond: 12;   // Größe der Raute (geschätzt)
+$radio-arrow-duration: 200ms; // Dauer, in der die Linie wächst bzw. schrumpft
+
 .radio {
-  padding-left: 44px;
-  font-size: px-to-rem(20);
   display: flex;
-  gap: px-to-rem(12);
-  margin-bottom: 12px;
+  align-items: center;
+  gap: px-to-rem(10);
+  padding-left: px-to-rem(44);
+  font-size: px-to-rem(20);
+  line-height: 1.2;                // feste Zeilenhöhe: Almarai 700 hätte sonst eine höhere Zeile als 400
+  white-space: nowrap;
 
   &__input {
+    appearance: none; // Browser-Optik entfernen
     width: px-to-rem(24);
     height: px-to-rem(24);
+    margin: 0;
+    border: px-to-rem(2) solid currentColor;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  &__input:checked {
+    background: radial-gradient(currentColor 0 35%, transparent 40%);
+  }
+
+  &__label {
+    position: relative;
+    font-weight: 400;
+    cursor: pointer;
+
+    // Linie: startet mit Breite 0
+    &::after {
+      content: '';
+      position: absolute;
+      left: calc(100% + #{px-to-rem($radio-arrow-gap)});
+      top: 50%;
+      width: 0;
+      height: px-to-rem($radio-arrow-thickness);
+      background-color: $color-secondary-yellow;
+      transform: translateY(-50%);
+      transition: width $radio-arrow-duration ease-out;
+    }
+
+    // Raute: sitzt auf dem Ende der Linie und wandert mit ihm.
+    // Ruhezustand: um die Linienlänge nach links verschoben (= Linienanfang) und unsichtbar.
+    // Beim Abwählen wandert sie mit der schrumpfenden Linie nach links
+    // und verschwindet erst, wenn die Linie weg ist (opacity mit Verzögerung).
+    &::before {
+      content: '';
+      position: absolute;
+      left: calc(100% + #{px-to-rem($radio-arrow-gap + $radio-arrow-length - $radio-arrow-diamond * 0.5)});
+      top: 50%;
+      width: px-to-rem($radio-arrow-diamond);
+      height: px-to-rem($radio-arrow-diamond);
+      background-color: $color-secondary-yellow;
+      transform: translate(px-to-rem(-$radio-arrow-length), -50%) rotate(45deg);
+      opacity: 0;
+      transition:
+        transform $radio-arrow-duration ease-out,
+        opacity 0s $radio-arrow-duration;
+    }
+  }
+
+  // Reserviert die Breite der fetten Schrift: eine unsichtbare, fette Kopie des Textes
+  // liegt in derselben Grid-Zelle. Dadurch wackelt nichts, wenn der Text fett wird.
+  &__text {
+    display: grid;
+
+    &::after {
+      content: attr(data-text);
+      grid-area: 1 / 1;
+      height: 0;
+      font-weight: 700;
+      visibility: hidden;
+    }
+  }
+
+  // Text: normal 400, fett bei Hover und Auswahl (nicht direkt nach dem Abwählen)
+  &:not(&--deselected):hover &__label,
+  &__input:checked + &__label {
+    font-weight: 700;
+  }
+
+  // Pfeil bei Auswahl und als Vorschau beim Hover (wie in Figma).
+  // Direkt nach dem Abwählen (--deselected) keine Vorschau, bis die Maus die Option verlässt.
+  &:not(&--deselected):hover &__label::after,
+  &__input:checked + &__label::after {
+    width: px-to-rem($radio-arrow-length); // Linie fährt heraus
+  }
+
+  // Beim Auswählen erscheint die Raute sofort am Linienanfang und wandert mit nach rechts
+  &:not(&--deselected):hover &__label::before,
+  &__input:checked + &__label::before {
+    transform: translate(0, -50%) rotate(45deg);
+    opacity: 1;
+    transition:
+      transform $radio-arrow-duration ease-out,
+      opacity 0s;
   }
 }

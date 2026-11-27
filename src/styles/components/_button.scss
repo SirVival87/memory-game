@@ -14,9 +14,10 @@ $arrow-stroke-hover: 4px;
   color: $color-primary-dark;
   font-weight: 700;
   font-size: px-to-rem(40);
+  line-height: 1;                  // Figma: Zeilenhöhe 100 %
   transition: transform $transition-fast;
 
-  &:hover {
+  &:hover:not(:disabled) {
     transform: scale(1.1);
   }
 
@@ -24,8 +25,27 @@ $arrow-stroke-hover: 4px;
     transition: transform $transition-fast;
   }
 
-  &:hover &__icon {
+  // Nur der Controller im Play-Button kippt
+  &--play:hover &__icon {
     transform: rotate($controller-tilt-angle);
+  }
+
+  // Start-Button in den Settings (Figma: small button)
+  &--start {
+    padding: px-to-rem(14) px-to-rem(20);
+    gap: px-to-rem(8);
+    font-size: px-to-rem(24);
+  }
+
+  &:disabled {
+    background-color: $color-disabled-bg;
+    color: $color-disabled-text;
+    cursor: not-allowed;
+  }
+
+  // Icon ist ein <img> mit fester Farbe, deshalb grau über die Deckkraft
+  &:disabled &__icon {
+    opacity: 0.4;
   }
 
   &__arrow {
