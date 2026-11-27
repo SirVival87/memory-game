@@ -87,7 +87,7 @@ src/
 - [x] **Phase 1 – SCSS-Grundgerüst:** Variablen, Reset, Layout-Container, Mixins (widescreen, tablet, mobile), Themes mit vollständiger Farbliste.
 - [x] **Phase 2 – US1 Home:** semantisches HTML, Play-Button → Settings, Controller-Icon im Button kippt beim Hover, Pfeil wächst.
 - [x] **Phase 3 – Typen, State, Navigation:** `type Theme`, `type BoardSize = 16 | 24 | 36`, `interface GameState`, `render…()`-Funktionen.
-- [ ] **Phase 4 – US2 + US3 Settings:**
+- [x] **Phase 4 – US2 + US3 Settings:**
   - Drei `<fieldset>` mit `<legend>` und Radiobuttons.
   - Bei `change`: State setzen, Vorschau-Bild tauschen, Leiste aktualisieren, Auswahl animieren.
   - Start erst aktiv, wenn alles gewählt ist.

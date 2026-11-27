@@ -1,34 +1,37 @@
 @use '../abstracts' as *;
 
-// Memory-Karte mit 3D-Drehung (aus deinem ersten Test übernommen).
+// Memory-Karte mit 3D-Drehung.
+// Rückseite (card-back.svg) ist sichtbar, beim Umdrehen dreht sich die Karte und zeigt das Motiv.
 .card {
-  height: 100px;
-  aspect-ratio: 1 / 1;
-  background-color: transparent;
+  padding: 0;
   border: none;
-  perspective: 600px;
+  background: none;
+  cursor: pointer;
+  perspective: px-to-rem(600);
 
   &__inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
+    display: grid; // beide Seiten liegen übereinander in derselben Zelle
     transform-style: preserve-3d;
     transition: transform $transition-flip;
   }
 
   &__face {
-    position: absolute;
-    inset: 0;
-    background-color: black;
+    grid-area: 1 / 1;
+    display: block;
+    width: 100%;
+    height: auto;
     backface-visibility: hidden;
 
-    &--back {
+    &--front {
       transform: rotateY(180deg);
-      background-color: red;
     }
   }
 
-  &.is-flipped .card__inner {
+  &.is-flipped &__inner {
     transform: rotateY(180deg);
+  }
+
+  &.is-matched {
+    cursor: default;
   }
 }

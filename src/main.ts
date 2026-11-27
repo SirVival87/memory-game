@@ -13,13 +13,3 @@ init();
 function init(): void {
   renderHome();
 }
-
-// const fieldRef = document.getElementById('field');
-//     if(fieldRef){
-//         fieldRef.addEventListener('click', (e: Event) => {
-//             const card = (e.target as HTMLElement).closest('.card') as HTMLButtonElement;
-//             if(card){
-//                 card.classList.toggle("is-flipped");
-//             }
-//         });
-//     }

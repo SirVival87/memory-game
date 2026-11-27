@@ -6,6 +6,9 @@ import { getHomeTemplate } from './templates/home-template';
 import { getSettingsTemplate } from './templates/settings-template';
 import { initSettings } from './settings';
 import { prepareGame } from './game-logic';
+import { getGameTemplate } from './templates/game-template';
+import { initGame } from './game';
+import { resetState } from './state';
 
 const APP = document.getElementById('app');
 
@@ -26,7 +29,7 @@ function addPlayButtonListener(): void {
   const playButton = document.getElementById('play-button');
   if (playButton) {
     playButton.addEventListener('click', renderSettings);
-  };
+  }
 }
 
 /**
@@ -48,12 +51,22 @@ function startGame(): void {
 }
 
 /**
- * Inserts the game board into the main container (placeholder until phase 5).
+ * Inserts the game page into the main container and connects cards, header and exit dialog.
  */
 export function renderGame(): void {
   if (APP) {
-    APP.innerHTML = '<h1>Game</h1>';
+    APP.innerHTML = getGameTemplate();
   }
+  initGame(leaveGame, renderResult);
+}
+
+/**
+ * Leaves the game: resets the state, removes the theme and shows the home page.
+ */
+function leaveGame(): void {
+  resetState();
+  delete document.body.dataset.theme;
+  renderHome();
 }
 
 /**

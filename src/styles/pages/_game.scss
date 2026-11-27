@@ -1,3 +1,112 @@
 @use '../abstracts' as *;
 
-// Spielfeld: Grid 4x4 / 6x4 / 6x6.
+// Spielfeld: Kopfzeile und Grid 4×4 / 6×4 / 6×6. Farben und Schriften kommen aus dem Theme.
+
+$card-width: 120;
+$card-width-large-board: 100; // bei 36 Karten kleiner, damit 6 Reihen auf den Bildschirm passen
+
+.game {
+  min-height: 100vh;
+  padding-block: px-to-rem(24);
+
+  // Kopfzeile: Punkte, aktueller Spieler, Exit
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: px-to-rem(16);
+    margin-bottom: px-to-rem(32);
+    padding: px-to-rem(12) px-to-rem(24);
+    border-radius: px-to-rem(8);
+    background-color: var(--color-header);
+  }
+
+  &__scores {
+    display: flex;
+    gap: px-to-rem(16);
+    padding: px-to-rem(6) px-to-rem(12);
+    border-radius: px-to-rem(6);
+    background-color: $color-white;
+    font-size: px-to-rem(24);
+    font-weight: 700;
+  }
+
+  &__score {
+    display: flex;
+    align-items: center;
+    gap: px-to-rem(4);
+
+    &--blue {
+      color: var(--color-player-blue);
+    }
+
+    &--orange {
+      color: var(--color-player-orange);
+    }
+  }
+
+  // Icons als Maske: die Form kommt aus dem SVG, die Farbe aus background-color
+  &__pawn {
+    width: px-to-rem(20);
+    height: px-to-rem(24);
+    background-color: currentColor;
+    mask: url('/img/icons/pawn.svg') center / contain no-repeat;
+  }
+
+  &__current {
+    display: flex;
+    align-items: center;
+    gap: px-to-rem(12);
+    font-size: px-to-rem(24);
+  }
+
+  &__player-tag {
+    width: px-to-rem(28);
+    height: px-to-rem(28);
+    background-color: var(--color-player-blue);
+    mask: url('/img/icons/player-tag.svg') center / contain no-repeat;
+
+    &[data-player='orange'] {
+      background-color: var(--color-player-orange);
+    }
+  }
+
+  &__exit {
+    display: flex;
+    align-items: center;
+    gap: px-to-rem(8);
+    padding: px-to-rem(10) px-to-rem(16);
+    border: px-to-rem(2) solid var(--color-primary);
+    border-radius: px-to-rem(4);
+    font-size: px-to-rem(20);
+    font-weight: 700;
+    transition: transform $transition-fast;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__exit-icon {
+    width: px-to-rem(20);
+    height: px-to-rem(20);
+    background-color: currentColor;
+    mask: url('/img/icons/exit.svg') center / contain no-repeat;
+  }
+
+  // Spielfeld
+  &__board {
+    display: grid;
+    grid-template-columns: repeat(4, px-to-rem($card-width));
+    justify-content: center;
+    gap: px-to-rem(16);
+
+    &--24 {
+      grid-template-columns: repeat(6, px-to-rem($card-width));
+    }
+
+    &--36 {
+      grid-template-columns: repeat(6, px-to-rem($card-width-large-board));
+    }
+  }
+}
